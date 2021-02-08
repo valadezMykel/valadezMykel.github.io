@@ -10,10 +10,10 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 function App() {
   return (
     <ScreenSizeContext>
+      <BrowserRouter>
       <div style={{backgroundColor: 'rgb(230,225,215)', paddingBottom: '20px'}}>
         <NavbarName />
       </div>
-      <BrowserRouter>
         <Switch>
           <Route exact path= '/' component={Home} />
           <Route exact path='/contact' component={ReachOut} />

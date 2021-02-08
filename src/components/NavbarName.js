@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import { GetScreenState } from '../contexts/screenSizeContext'
+import { Link } from 'react-router-dom'
 
 
 
@@ -47,11 +48,11 @@ export default function Navbar() {
     return (
         <Nav className={verticalOrNot} id='Nav' style={{position: 'relative', zIndex: "auto"}}>
             <Nav.Item>
-                <Nav.Link style={stylings.textLinks} className='textLink' href='/projects'>
-                    Projects
+                <Nav.Link style={stylings.textLinks} className='textLink' >
+                    <Link  style={stylings.textLinks} to={{ pathname: '/projects'}} className='textLink'>Projects</Link>
                 </Nav.Link>
-                <Nav.Link style={stylings.textLinks} className='textLink' href='/contact'>
-                    Reach Out!
+                <Nav.Link style={stylings.textLinks} >
+                    <Link  style={stylings.textLinks} to={{ pathname: '/contact'}} className='textLink'>Reach Out !</Link>
                 </Nav.Link>
             </Nav.Item>
             <Nav.Item>
@@ -67,10 +68,12 @@ export default function Navbar() {
                 zIndex: scrolled ? '10' : '',
             }}>
                 <Nav.Link 
-                    style={stylings.iconLinks} href="https://github.com/valadezMykel" className="iconLinks fab fa-github icon" target="_blank">
+                    style={stylings.iconLinks} 
+                    href ="https://github.com/valadezMykel" className="iconLinks fab fa-github icon" target="_blank">
                 </Nav.Link>
                 <Nav.Link 
-                    style={stylings.iconLinks} href="https://www.linkedin.com/in/mykel-valadez-3b18971b1/" target="_blank" className="iconLinks fab fa-linkedin icon">
+                    style={stylings.iconLinks} 
+                    href="https://www.linkedin.com/in/mykel-valadez-3b18971b1/" target="_blank" className="iconLinks fab fa-linkedin icon">
                 </Nav.Link>
             </Nav.Item>
         </Nav>
