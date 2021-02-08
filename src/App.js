@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import NavbarName from './components/NavbarName'
+import BackgroundDiv from './components/projectCards/backgroundDiv'
+import ScreenSizeContext from './contexts/screenSizeContext'
+import Home from './components/Home'
+import ReachOut from './components/ReachOut'
+import Projects from './components/Projects'
+import { Container } from 'react-bootstrap'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ScreenSizeContext>
+      <div style={{backgroundColor: 'rgb(230,225,215)', paddingBottom: '20px'}}>
+        <NavbarName />
+      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path= '/' component={Home} />
+          <Route exact path='/contact' component={ReachOut} />
+          <Route exact path='/projects' component={Projects} />
+        </Switch>
+      </BrowserRouter>
+    </ScreenSizeContext>
   );
 }
 
